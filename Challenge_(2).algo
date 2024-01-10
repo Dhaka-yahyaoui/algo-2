@@ -1,0 +1,57 @@
+checkpoint problem2n: ============================================================================
+FUNCTION dot_pro (v1 , v2 : ARRAY_OF_FLOAT [10]) : INTEGER
+VAR
+    i , dot : INTEGER
+BEGIN
+    dot := 0
+    i := 0
+    IF (v1.length <> v2.length) THEN
+        write ("vectore with diff size we cannot calc dot prod")
+    END_IF
+
+    WHILE (i < v1.length) DO
+        dot := dot + v1[i] * v2[i]
+        i++
+    END_WHILE
+
+    RETURN dot ;
+END
+
+ALGORITHM orth-vect
+VAR
+    v1 , v2 :  ARRAY_OF INTEGER[10];
+    dot : INTEGER
+BEGIN
+    write("donner la valeur de vector 1")
+    read (v1)
+    write("donner la valeur de vector 2")
+    read (v2)
+
+    dot : = dot_pro (v1 ,v2)
+
+    IF (dot === 0) THEN
+        write ("v1 and v2 orth")
+    ELSE
+        write ("v1 and v2 are not orth")
+    END_IF
+
+END
+
+
+  :====================================================================
+ALGORITHM insertion_sort
+VAR
+    set  : ARRAY_OF INTEGER[10];
+    i,j , temp : INTEGER
+BEGIN
+    FOR i FROM 0 TO set.lenght-1 STEP  1  DO
+        WHILE (j>0) DO
+            j = i+1
+            IF (arr[j] < arr[j-1]) THEN
+                temp := arr[j]
+                arr[j] := arr[j-1]
+                arr [j-1] := temp
+            END_IF
+        END_WHILE  
+        END_FOR
+    END_FOR END
